@@ -1,13 +1,8 @@
 Arduino libraries for RFID readers, using Wire (I2C) interface.
 
-SL018 library for Stronglink SL018 and SL030
-http://www.stronglink.cn
-
-SM130 library for SonMicro SM130 and SM130-mini
-http://www.sonmicro.com
-
-Arduino
-http://www.arduino.cc
+Arduino library for StrongLink SL018/SL030 RFID readers
+http://www.stronglink.cn/english/sl018.htm
+http://www.stronglink.cn/english/sl030.htm
 
 -- 
 June 2011
