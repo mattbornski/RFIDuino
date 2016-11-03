@@ -1,7 +1,7 @@
 { 
-   "name": "RFIDuino",
+   "name": "SL018",
    "author": "marcboon with adaptations by mattbornski",
    "license": "unknown",
    "version": "0.0.1",
-   "description": "Marc Boon's RFID library for the Stronglink SL018 and others"
+   "description": "Marc Boon's RFID library for the Stronglink SL018/SL030"
  } 
