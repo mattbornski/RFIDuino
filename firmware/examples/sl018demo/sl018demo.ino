@@ -5,14 +5,13 @@
 // Controls a StrongLink SL018 or SL030 RFID reader by I2C
 // Arduino to SL018/SL030 wiring:
 // A3/TAG     1      5
-// A4/SDA     2      3
-// A5/SCL     3      4
+// D0/SDA     2      3  (pull up to 3.3V via ~4.7kOhm resistor)
+// D1/SCL     3      4  (pull up to 3.3V via ~4.7kOhm resistor)
 // 5V         4      -
 // GND        5      6
 // 3V3        -      1
 
-#include <Wire.h>
-#include <SL018.h>
+#include <SL018/SL018.h>
 
 // TAG pin (low level when tag present)
 #define TAG 17 // A3

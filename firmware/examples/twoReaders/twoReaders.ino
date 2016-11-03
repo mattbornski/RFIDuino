@@ -6,8 +6,8 @@
  *  @see:    http://www.stronglink.cn/english/sl030.htm
  *
  *  Arduino to SL018/SL030 wiring:
- *  A4/SDA     2     3
- *  A5/SCL     3     4
+ *  D0/SDA     2     3  (pull up to 3.3V via ~4.7kOhm resistor)
+ *  D1/SCL     3     4  (pull up to 3.3V via ~4.7kOhm resistor)
  *  5V         4     -
  *  GND        5     6
  *  3V3        -     1
@@ -15,8 +15,7 @@
  *  4          1     5 // second reader
  */
 
-#include <Wire.h>
-#include <SL018.h>
+#include <SL018/SL018.h>
 
 //pins to listen for the RFID board signalling that it has detected a tag
 int reader1OutPin = 5;
