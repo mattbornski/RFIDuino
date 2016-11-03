@@ -10,7 +10,6 @@
  *  @see		http://www.stronglink.cn/english/sl030.htm
  */
  
-#include <Wire.h>
 #include <string.h>
 #include "SL018.h"
 
@@ -342,11 +341,7 @@ void SL018::transmitData()
 		
 	for (int i = 0; i <= data[0]; i++)
 	{
-#if defined(ARDUINO) && ARDUINO >= 100
 		Wire.write(data[i]);
-#else
-		Wire.send(data[i]);
-#endif
 	}
 	Wire.endTransmission();
 
@@ -375,20 +370,12 @@ byte SL018::receiveData(byte length)
 	if(Wire.available())
 	{
 		// get length	of packet
-#if defined(ARDUINO) && ARDUINO >= 100
 		data[0] = Wire.read();
-#else
-		data[0] = Wire.receive();
-#endif
 		
 		// get data
 		for (byte i = 1; i <= data[0]; i++)
 		{
-#if defined(ARDUINO) && ARDUINO >= 100
 			data[i] = Wire.read();
-#else
-			data[i] = Wire.receive();
-#endif
 		}
 
 		// show received packet for debugging

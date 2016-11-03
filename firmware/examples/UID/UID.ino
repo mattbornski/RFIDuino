@@ -5,15 +5,14 @@
  *  @see:    http://www.stronglink.cn/english/sl030.htm
  *
  *  Arduino to SL018/SL030 wiring:
- *  A4/SDA     2     3
- *  A5/SCL     3     4
+ *  D0/SDA     2     3  (pull up to 3.3V via ~4.7kOhm resister)
+ *  D1/SCL     3     4  (pull up to 3.3V via ~4.7kOhm resister)
  *  5V         4     -
  *  GND        5     6
  *  3V3        -     1
  */
 
-#include <Wire.h>
-#include <SL018.h>
+#include <SL018/SL018.h>
 
 SL018 rfid;
 
@@ -23,7 +22,7 @@ void setup()
   Serial.begin(19200);
 
   // prompt for tag
-  Serial.println("Show me your tag");
+  Particle.publish("Show me your tag");
 }
 
 void loop()
@@ -33,6 +32,6 @@ void loop()
   // wait until tag detected
   while(!rfid.available());
   // print tag id
-  Serial.println(rfid.getTagString());
+  Particle.publish(rfid.getTagString());
 }
 
